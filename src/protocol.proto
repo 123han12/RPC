@@ -1,0 +1,9 @@
+syntax = "proto3" ; 
+
+package RpcProtocol ; 
+
+message RequestHeader {
+    bytes servicename = 1 ; 
+    bytes methodname = 2 ; 
+    int32 argsize = 3 ; 
+} 

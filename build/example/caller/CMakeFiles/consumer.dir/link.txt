@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/consumer.dir/userclient.cpp.o CMakeFiles/consumer.dir/__/user.pb.cc.o -o ../../../bin/consumer   -L/home/masplove/Project/RPC/lib  -Wl,-rpath,/home/masplove/Project/RPC/lib ../../../lib/librpc.a -lprotobuf -lmuduo_net -lmuduo_base -lpthread 

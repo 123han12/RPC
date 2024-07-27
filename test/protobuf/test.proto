@@ -1,0 +1,11 @@
+syntax = "proto3" ; 
+
+package RPC ;  
+
+message Person {
+    int32 id = 1 ; 
+    bytes name = 2 ; 
+    bytes sex = 3 ; 
+    int32 age = 4 ; 
+}
+

@@ -1,0 +1,27 @@
+syntax = "proto3" ; 
+package protocol ; // 指定包名字
+
+
+// 告诉protoc 生成service 服务类和rpc方法描述
+option cc_generic_services = true ; 
+
+message errInfo
+{
+    int32 errCode = 1 ; 
+    bytes errMsg = 2 ; 
+}
+
+message LoginRequest{
+    int32 id = 1 ; 
+    bytes password = 2 ; 
+}
+
+message LoginResponse{
+    errInfo errinfo = 1 ; 
+    bool result = 2 ; 
+}
+
+service UserServiceRpc {
+    rpc Login(LoginRequest) returns (LoginResponse) ; 
+}
+
