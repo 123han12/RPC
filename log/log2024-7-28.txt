@@ -6,3 +6,10 @@
 2024-7-28-17:13:35:[INFO]:send called data to client:127.0.0.1:42068 
 2024-7-28-17:13:35:[INFO]:client:127.0.0.1:42068 call service UserServiceRpc method Login
 2024-7-28-17:13:35:[INFO]:close connection: 127.0.0.1:42068
+2024-7-28-18:3:16:[INFO]:register service: UserServiceRpc
+2024-7-28-18:3:16:[INFO]:  service's method: Login
+2024-7-28-18:3:16:[INFO]:begin event loop........
+2024-7-28-18:3:20:[INFO]:accepted new connection: 127.0.0.1:35946
+2024-7-28-18:3:20:[INFO]:send called data to client:127.0.0.1:35946 
+2024-7-28-18:3:20:[INFO]:client:127.0.0.1:35946 call service UserServiceRpc method Login
+2024-7-28-18:3:20:[INFO]:close connection: 127.0.0.1:35946

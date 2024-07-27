@@ -8,6 +8,7 @@
 #include <unistd.h>
 
 #include <string>
+#include <memory> 
 
 void RpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method , 
         google::protobuf::RpcController* controller ,
@@ -48,12 +49,18 @@ void RpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method ,
     // 建立连接 发送已经序列化好的message 
     // 使用linux下的原生态接口进行编程
     //1.创建socket
-    int client_sock=socket(AF_INET,SOCK_STREAM,0);
+    int client_sock=socket(AF_INET,SOCK_STREAM,0) ; 
+
     if (client_sock==-1)
     {
         controller->SetFailed("Faild to create socket") ; 
         return ; 
     }
+    std::shared_ptr<int> sockPtr(&client_sock , [](int* sockptr)->void {
+                close(*sockptr) ; 
+                std::cout << "close socket file " << std::endl ; 
+        }
+    ) ; 
  
     std::pair<std::string , int> rpcServerInfo = RpcConfig::GetInstance().GetRpcServerInfo() ; 
     std::string ip = rpcServerInfo.first ; 
@@ -74,7 +81,7 @@ void RpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method ,
     std::cout<<"Connected to server: " << ip << " : " << port << std::endl ; 
  
     //3.数据交互 
-    if(send(client_sock,message.c_str(),message.length() , 0 )==-1){
+    if(send(*sockPtr,message.c_str(),message.length() , 0 )==-1){
         controller->SetFailed("Faild to write ") ; 
         return ; 
     }
@@ -82,13 +89,13 @@ void RpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method ,
     //接受消息
  
     char buffer[4096] ; 
-    if(recv(client_sock,buffer,sizeof(buffer) , 0 )==-1) { 
+    if(recv(*sockPtr,buffer,sizeof(buffer) , 0 )==-1) { 
         controller->SetFailed("Faild to read") ;
         return ;
     }
 
-    // 反序列化
+    // 反序列化到指定的response地址中
     response->ParseFromArray(buffer , strlen(buffer) ) ; 
 
-    close(client_sock) ; 
+
 }
