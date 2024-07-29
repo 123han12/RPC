@@ -696,10 +696,10 @@ example/caller/CMakeFiles/consumer.dir/userclient.cpp.o: ../example/caller/userc
   /usr/local/include/google/protobuf/extension_set.h \
   /usr/include/c++/11/cassert \
   ../include/rpccontroller.h \
-  ../include/rpcconfig.h
+  ../include/rpcapplication.h
 
 
-../include/rpcconfig.h:
+../include/rpcapplication.h:
 
 ../include/rpcchannel.h:
 

@@ -111,24 +111,10 @@ src/CMakeFiles/rpc.dir/rpcchannel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpc.dir/rpcchannel.cpp.s"
 	cd /home/masplove/Project/RPC/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/masplove/Project/RPC/src/rpcchannel.cpp -o CMakeFiles/rpc.dir/rpcchannel.cpp.s
 
-src/CMakeFiles/rpc.dir/rpcconfig.cpp.o: src/CMakeFiles/rpc.dir/flags.make
-src/CMakeFiles/rpc.dir/rpcconfig.cpp.o: ../src/rpcconfig.cpp
-src/CMakeFiles/rpc.dir/rpcconfig.cpp.o: src/CMakeFiles/rpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/masplove/Project/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/rpc.dir/rpcconfig.cpp.o"
-	cd /home/masplove/Project/RPC/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/rpc.dir/rpcconfig.cpp.o -MF CMakeFiles/rpc.dir/rpcconfig.cpp.o.d -o CMakeFiles/rpc.dir/rpcconfig.cpp.o -c /home/masplove/Project/RPC/src/rpcconfig.cpp
-
-src/CMakeFiles/rpc.dir/rpcconfig.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rpc.dir/rpcconfig.cpp.i"
-	cd /home/masplove/Project/RPC/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/masplove/Project/RPC/src/rpcconfig.cpp > CMakeFiles/rpc.dir/rpcconfig.cpp.i
-
-src/CMakeFiles/rpc.dir/rpcconfig.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpc.dir/rpcconfig.cpp.s"
-	cd /home/masplove/Project/RPC/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/masplove/Project/RPC/src/rpcconfig.cpp -o CMakeFiles/rpc.dir/rpcconfig.cpp.s
-
 src/CMakeFiles/rpc.dir/rpccontroller.cc.o: src/CMakeFiles/rpc.dir/flags.make
 src/CMakeFiles/rpc.dir/rpccontroller.cc.o: ../src/rpccontroller.cc
 src/CMakeFiles/rpc.dir/rpccontroller.cc.o: src/CMakeFiles/rpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/masplove/Project/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/rpc.dir/rpccontroller.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/masplove/Project/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/rpc.dir/rpccontroller.cc.o"
 	cd /home/masplove/Project/RPC/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/rpc.dir/rpccontroller.cc.o -MF CMakeFiles/rpc.dir/rpccontroller.cc.o.d -o CMakeFiles/rpc.dir/rpccontroller.cc.o -c /home/masplove/Project/RPC/src/rpccontroller.cc
 
 src/CMakeFiles/rpc.dir/rpccontroller.cc.i: cmake_force
@@ -142,7 +128,7 @@ src/CMakeFiles/rpc.dir/rpccontroller.cc.s: cmake_force
 src/CMakeFiles/rpc.dir/rpcprovider.cc.o: src/CMakeFiles/rpc.dir/flags.make
 src/CMakeFiles/rpc.dir/rpcprovider.cc.o: ../src/rpcprovider.cc
 src/CMakeFiles/rpc.dir/rpcprovider.cc.o: src/CMakeFiles/rpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/masplove/Project/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/rpc.dir/rpcprovider.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/masplove/Project/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/rpc.dir/rpcprovider.cc.o"
 	cd /home/masplove/Project/RPC/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/rpc.dir/rpcprovider.cc.o -MF CMakeFiles/rpc.dir/rpcprovider.cc.o.d -o CMakeFiles/rpc.dir/rpcprovider.cc.o -c /home/masplove/Project/RPC/src/rpcprovider.cc
 
 src/CMakeFiles/rpc.dir/rpcprovider.cc.i: cmake_force
@@ -156,7 +142,7 @@ src/CMakeFiles/rpc.dir/rpcprovider.cc.s: cmake_force
 src/CMakeFiles/rpc.dir/rpcserverlog.cpp.o: src/CMakeFiles/rpc.dir/flags.make
 src/CMakeFiles/rpc.dir/rpcserverlog.cpp.o: ../src/rpcserverlog.cpp
 src/CMakeFiles/rpc.dir/rpcserverlog.cpp.o: src/CMakeFiles/rpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/masplove/Project/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/rpc.dir/rpcserverlog.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/masplove/Project/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/rpc.dir/rpcserverlog.cpp.o"
 	cd /home/masplove/Project/RPC/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/rpc.dir/rpcserverlog.cpp.o -MF CMakeFiles/rpc.dir/rpcserverlog.cpp.o.d -o CMakeFiles/rpc.dir/rpcserverlog.cpp.o -c /home/masplove/Project/RPC/src/rpcserverlog.cpp
 
 src/CMakeFiles/rpc.dir/rpcserverlog.cpp.i: cmake_force
@@ -167,15 +153,29 @@ src/CMakeFiles/rpc.dir/rpcserverlog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpc.dir/rpcserverlog.cpp.s"
 	cd /home/masplove/Project/RPC/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/masplove/Project/RPC/src/rpcserverlog.cpp -o CMakeFiles/rpc.dir/rpcserverlog.cpp.s
 
+src/CMakeFiles/rpc.dir/rpczookeeperutil.cpp.o: src/CMakeFiles/rpc.dir/flags.make
+src/CMakeFiles/rpc.dir/rpczookeeperutil.cpp.o: ../src/rpczookeeperutil.cpp
+src/CMakeFiles/rpc.dir/rpczookeeperutil.cpp.o: src/CMakeFiles/rpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/masplove/Project/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/rpc.dir/rpczookeeperutil.cpp.o"
+	cd /home/masplove/Project/RPC/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/rpc.dir/rpczookeeperutil.cpp.o -MF CMakeFiles/rpc.dir/rpczookeeperutil.cpp.o.d -o CMakeFiles/rpc.dir/rpczookeeperutil.cpp.o -c /home/masplove/Project/RPC/src/rpczookeeperutil.cpp
+
+src/CMakeFiles/rpc.dir/rpczookeeperutil.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rpc.dir/rpczookeeperutil.cpp.i"
+	cd /home/masplove/Project/RPC/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/masplove/Project/RPC/src/rpczookeeperutil.cpp > CMakeFiles/rpc.dir/rpczookeeperutil.cpp.i
+
+src/CMakeFiles/rpc.dir/rpczookeeperutil.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpc.dir/rpczookeeperutil.cpp.s"
+	cd /home/masplove/Project/RPC/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/masplove/Project/RPC/src/rpczookeeperutil.cpp -o CMakeFiles/rpc.dir/rpczookeeperutil.cpp.s
+
 # Object files for target rpc
 rpc_OBJECTS = \
 "CMakeFiles/rpc.dir/protocol.pb.cc.o" \
 "CMakeFiles/rpc.dir/rpcapplication.cpp.o" \
 "CMakeFiles/rpc.dir/rpcchannel.cpp.o" \
-"CMakeFiles/rpc.dir/rpcconfig.cpp.o" \
 "CMakeFiles/rpc.dir/rpccontroller.cc.o" \
 "CMakeFiles/rpc.dir/rpcprovider.cc.o" \
-"CMakeFiles/rpc.dir/rpcserverlog.cpp.o"
+"CMakeFiles/rpc.dir/rpcserverlog.cpp.o" \
+"CMakeFiles/rpc.dir/rpczookeeperutil.cpp.o"
 
 # External object files for target rpc
 rpc_EXTERNAL_OBJECTS =
@@ -183,10 +183,10 @@ rpc_EXTERNAL_OBJECTS =
 ../lib/librpc.a: src/CMakeFiles/rpc.dir/protocol.pb.cc.o
 ../lib/librpc.a: src/CMakeFiles/rpc.dir/rpcapplication.cpp.o
 ../lib/librpc.a: src/CMakeFiles/rpc.dir/rpcchannel.cpp.o
-../lib/librpc.a: src/CMakeFiles/rpc.dir/rpcconfig.cpp.o
 ../lib/librpc.a: src/CMakeFiles/rpc.dir/rpccontroller.cc.o
 ../lib/librpc.a: src/CMakeFiles/rpc.dir/rpcprovider.cc.o
 ../lib/librpc.a: src/CMakeFiles/rpc.dir/rpcserverlog.cpp.o
+../lib/librpc.a: src/CMakeFiles/rpc.dir/rpczookeeperutil.cpp.o
 ../lib/librpc.a: src/CMakeFiles/rpc.dir/build.make
 ../lib/librpc.a: src/CMakeFiles/rpc.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/masplove/Project/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library ../../lib/librpc.a"

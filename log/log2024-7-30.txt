@@ -1,0 +1,77 @@
+2024-7-30-18:26:6:[INFO]:register service: UserServiceRpc
+2024-7-30-18:26:6:[INFO]:  service's method: Login
+2024-7-30-18:27:7:[INFO]:register service: UserServiceRpc
+2024-7-30-18:27:7:[INFO]:  service's method: Login
+2024-7-30-18:30:2:[INFO]:register service: UserServiceRpc
+2024-7-30-18:30:2:[INFO]:  service's method: Login
+2024-7-30-18:32:1:[INFO]:register service: UserServiceRpc
+2024-7-30-18:32:1:[INFO]:  service's method: Login
+2024-7-30-18:32:1:[INFO]:zookeeper_init sucess!
+2024-7-30-18:32:1:[INFO]:znode create sucess.... path:/UserServiceRpc
+2024-7-30-18:32:1:[INFO]:znode create sucess.... path:/UserServiceRpc/Login
+2024-7-30-18:32:1:[INFO]:begin event loop........
+2024-7-30-19:47:38:[INFO]:register service: UserServiceRpc
+2024-7-30-19:47:38:[INFO]:  service's method: Login
+2024-7-30-19:52:0:[INFO]:register service: UserServiceRpc
+2024-7-30-19:52:0:[INFO]:  service's method: Login
+2024-7-30-19:52:0:[INFO]:zookeeper_init sucess!
+2024-7-30-19:52:0:[INFO]:znode create sucess.... path:/UserServiceRpc
+2024-7-30-19:52:0:[INFO]:znode create sucess.... path:/UserServiceRpc/Login
+2024-7-30-19:52:0:[INFO]:begin event loop........
+2024-7-30-20:3:52:[INFO]:register service: UserServiceRpc
+2024-7-30-20:3:52:[INFO]:  service's method: Login
+2024-7-30-20:3:52:[INFO]:zookeeper_init sucess!
+2024-7-30-20:3:52:[INFO]:znode create sucess.... path:/UserServiceRpc/Login
+2024-7-30-20:3:52:[INFO]:begin event loop........
+2024-7-30-20:9:9:[INFO]:register service: UserServiceRpc
+2024-7-30-20:9:9:[INFO]:  service's method: Login
+2024-7-30-20:9:9:[INFO]:zookeeper_init sucess!
+2024-7-30-20:10:26:[INFO]:register service: UserServiceRpc
+2024-7-30-20:10:26:[INFO]:  service's method: Login
+2024-7-30-20:10:26:[INFO]:zookeeper_init sucess!
+2024-7-30-20:11:5:[INFO]:register service: UserServiceRpc
+2024-7-30-20:11:5:[INFO]:  service's method: Login
+2024-7-30-20:11:5:[INFO]:zookeeper_init sucess!
+2024-7-30-20:54:59:[INFO]:register service: UserServiceRpc
+2024-7-30-20:54:59:[INFO]:  service's method: Login
+2024-7-30-20:54:59:[INFO]:zookeeper_init sucess!
+2024-7-30-20:54:59:[INFO]:znode create sucess.... path:/UserServiceRpc
+›ø_Y2024-7-30-20:55:22:[INFO]:register service: UserServiceRpc
+2024-7-30-20:55:22:[INFO]:  service's method: Login
+2024-7-30-20:55:22:[INFO]:zookeeper_init sucess!
+ÿÒIX2024-7-30-20:55:45:[INFO]:register service: UserServiceRpc
+2024-7-30-20:55:45:[INFO]:  service's method: Login
+2024-7-30-20:55:45:[INFO]:zookeeper_init sucess!
+2024-7-30-20:55:45:[INFO]:znode create sucess.... path:/UserServiceRpc
+žé\2024-7-30-20:56:13:[INFO]:register service: UserServiceRpc
+2024-7-30-20:56:13:[INFO]:  service's method: Login
+2024-7-30-20:56:13:[INFO]:zookeeper_init sucess!
+’$’c2024-7-30-20:57:33:[INFO]:register service: UserServiceRpc
+2024-7-30-20:57:33:[INFO]:  service's method: Login
+2024-7-30-20:57:33:[INFO]:zookeeper_init sucess!
+2024-7-30-20:57:33:[INFO]:znode create sucess.... path:/UserServiceRpc
+2024-7-30-20:57:33:[INFO]:znode create sucess.... path:/UserServiceRpc/Login
+2024-7-30-20:57:33:[INFO]:begin event loop........
+2024-7-30-21:3:37:[INFO]:zookeeper_init sucess!
+2024-7-30-21:3:37:[INFO]:accepted new connection: 127.0.0.1:54124
+2024-7-30-21:3:37:[INFO]:send called data to client:127.0.0.1:54124 
+2024-7-30-21:3:37:[INFO]:client:127.0.0.1:54124 call service UserServiceRpc method Login
+2024-7-30-21:3:37:[INFO]:close connection: 127.0.0.1:54124
+2024-7-30-21:5:23:[INFO]:zookeeper_init sucess!
+2024-7-30-21:5:23:[INFO]:accepted new connection: 127.0.0.1:47260
+2024-7-30-21:5:23:[INFO]:send called data to client:127.0.0.1:47260 
+2024-7-30-21:5:23:[INFO]:client:127.0.0.1:47260 call service UserServiceRpc method Login
+2024-7-30-21:5:23:[INFO]:close connection: 127.0.0.1:47260
+2024-7-30-21:7:40:[INFO]:zookeeper_init sucess!
+2024-7-30-21:7:40:[INFO]:accepted new connection: 127.0.0.1:37998
+2024-7-30-21:7:40:[INFO]:send called data to client:127.0.0.1:37998 
+2024-7-30-21:7:40:[INFO]:client:127.0.0.1:37998 call service UserServiceRpc method Login
+2024-7-30-21:7:40:[INFO]:close connection: 127.0.0.1:37998
+2024-7-30-21:16:43:[INFO]:accepted new connection: 127.0.0.1:45572
+2024-7-30-21:16:43:[INFO]:send called data to client:127.0.0.1:45572 
+2024-7-30-21:16:43:[INFO]:client:127.0.0.1:45572 call service UserServiceRpc method Login
+2024-7-30-21:16:43:[INFO]:close connection: 127.0.0.1:45572
+2024-7-30-21:20:5:[INFO]:accepted new connection: 127.0.0.1:39922
+2024-7-30-21:20:5:[INFO]:send called data to client:127.0.0.1:39922 
+2024-7-30-21:20:5:[INFO]:client:127.0.0.1:39922 call service UserServiceRpc method Login
+2024-7-30-21:20:5:[INFO]:close connection: 127.0.0.1:39922

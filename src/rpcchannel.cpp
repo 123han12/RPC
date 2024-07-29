@@ -1,6 +1,6 @@
 #include "rpcchannel.h"
 #include "protocol.pb.h"
-#include "rpcconfig.h"
+#include "rpczookeeperutil.h"
 
 #include <sys/types.h>
 #include <sys/socket.h> 
@@ -61,11 +61,22 @@ void RpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method ,
                 std::cout << "close socket file " << std::endl ; 
         }
     ) ; 
- 
-    std::pair<std::string , int> rpcServerInfo = RpcConfig::GetInstance().GetRpcServerInfo() ; 
-    std::string ip = rpcServerInfo.first ; 
-    int port = rpcServerInfo.second ; 
 
+    // 通过静态查询的方式找到rpc服务的地址
+    // std::pair<std::string , int> rpcServerInfo = RpcConfig::GetInstance().GetRpcServerInfo() ; 
+    // std::string ip = rpcServerInfo.first ; 
+    // int port = rpcServerInfo.second ; 
+
+    // 通过zookeeper的方式找到rpc服务的地址
+    std::string method_path = "/" + servicename + "/" + methodname ; 
+    ZkClient zkclient ; 
+    zkclient.Start() ; // 连接zookeeper服务器
+    std::string ServiceAddress = zkclient.GetData(method_path.c_str() ) ; 
+    int idx = ServiceAddress.find(":") ; 
+    std::string ip = ServiceAddress.substr(0 , idx ) ;
+    int port = std::atoi( ServiceAddress.substr(idx + 1 , ServiceAddress.size() - idx ).c_str() ) ;   
+
+    
 
     //2.连接服务器
     struct sockaddr_in server_addr;

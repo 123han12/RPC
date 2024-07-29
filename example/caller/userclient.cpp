@@ -3,7 +3,7 @@
 #include "rpcchannel.h"
 #include "user.pb.h"
 #include "rpccontroller.h"
-#include "rpcconfig.h" 
+#include "rpcapplication.h" 
 
 
 // 解析传入的参数
@@ -35,7 +35,7 @@ int main(int argc , char** argv ) {
         std::cout << "paramter error" << std::endl ; 
     }
     std::string configFile = ParseParameter(argc , argv) ; 
-    RpcConfig::GetInstance().Init(configFile) ; 
+    RpcApplication::GetInstance().Init(configFile) ; 
 
 
     RpcChannel channel ;  // 表示一条通道，
@@ -65,5 +65,5 @@ int main(int argc , char** argv ) {
     std::cout << "result: " << response.result() << std::endl ;    
 
 
-    return 0 ; 
+    exit(0) ; 
 }

@@ -1,5 +1,4 @@
 #include "rpcapplication.h"
-#include "rpcserverlog.h"
 #include <time.h> 
 #include <unistd.h>
 const int BUFSIZE = 1024 ; 
@@ -31,7 +30,6 @@ void RpcApplication::Init(std::string configFile) {
     FILE* pfile = fopen(configFile.c_str() , "r" ) ; // 以只读的方式
     if(pfile == NULL ) {
         std::cout << "open config file failed!...." << std::endl ; 
-        LOG_INFO("not found file %s" , ERROR , configFile.c_str() ) ; 
     }
     int linenumber = 0 ; 
     while(fgets(buffer , sizeof(buffer) , pfile ) != NULL ) {
@@ -59,7 +57,6 @@ void RpcApplication::Init(std::string configFile) {
         idx = line.find('=') ; 
         if(idx == std::string::npos ) {
             std::cout << "error occur when we read config file " << std::endl ; 
-            LOG_INFO("config file:%d line format is error" , CRITICAL , linenumber ) ; 
             sleep(1) ; 
             exit(EXIT_FAILURE) ; 
         }
@@ -69,7 +66,6 @@ void RpcApplication::Init(std::string configFile) {
         value = removeFirstSpace(value) ; // 移除value 的前置空格
         if(key.empty() || value.empty() ) {
             std::cout << "error occur when we read config file " << std::endl ; 
-            LOG_INFO("config file:%d line format is error" , CRITICAL , linenumber ) ; 
             exit(EXIT_FAILURE) ; 
         }
         configMap[key] = value ; 
@@ -83,13 +79,11 @@ std::pair<std::string , int> RpcApplication::GetRpcServerInfo() {
     std::string rpcport = "rpcserverport" ; 
     if(configMap.find(rpcip) == configMap.end() ) {
         std::cout << "load rpcserver ip error" << std::endl ;
-        LOG_INFO("not found: %s config item from configfie!" , CRITICAL , rpcip.c_str() ) ; 
         exit(EXIT_FAILURE) ; 
 
     }
     if(configMap.find(rpcport) == configMap.end() ) {
         std::cout << "load rpcserver port error" << std::endl ; 
-        LOG_INFO("not found: %s config item from configfie!" , CRITICAL , rpcip.c_str() ) ; 
         exit(EXIT_FAILURE) ; 
     }
     std::string ip = configMap[rpcip] ; 
@@ -103,13 +97,11 @@ std::pair<std::string , int> RpcApplication::GetZookeeperInfo() {
     std::string zookeeperip = "zookeeperip" ; 
     std::string zookeeperport = "zookeeperport" ; 
     if(configMap.find(zookeeperip) == configMap.end() ) {
-        std::cout << "load zookeeperip ip error" << std::endl ;
-        LOG_INFO("not found: %s config item from configfie!" , CRITICAL , zookeeperip.c_str() ) ; 
+        std::cout << __FILE__ << ": " << __LINE__  << "load zookeeperip ip error" << std::endl ;
         exit(EXIT_FAILURE) ; 
     }
     if(configMap.find(zookeeperport) == configMap.end() ) {
         std::cout << "load zookeeperport port error" << std::endl ; 
-        LOG_INFO("not found: %s config item from configfie!" , CRITICAL , zookeeperip.c_str() ) ; 
         exit(EXIT_FAILURE) ; 
     }
     std::string ip = configMap[zookeeperip] ; 
@@ -123,4 +115,5 @@ std::string RpcApplication::GetConfigPath() {
         std::cout << "log output path not found" << std::endl ; 
     }
     return configMap[log] ; 
+
 }

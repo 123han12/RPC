@@ -117,8 +117,8 @@ std::string RpcServerLog::GetLogLevel(LogLevel level ) {
 // 在构造函数内启动日志进程。
 RpcServerLog::RpcServerLog() {
 
-    std::thread WriteThread(std::bind(&RpcServerLog::WriteToDisk , this)) ; 
-    WriteThread.detach() ; // 实现将线程和thread对象进行分离，不分离的话，在析构thread对象的时候会尝试合并线程 
+    // std::thread WriteThread(std::bind(&RpcServerLog::WriteToDisk , this)) ; 
+    // WriteThread.detach() ; // 实现将线程和thread对象进行分离，不分离的话，在析构thread对象的时候会尝试合并线程 
 }   
 
 RpcServerLog::~RpcServerLog() {

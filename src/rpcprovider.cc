@@ -2,6 +2,7 @@
 #include "rpcapplication.h"
 #include "protocol.pb.h"
 #include "rpcserverlog.h"
+#include "rpczookeeperutil.h"
 
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/stubs/callback.h>
@@ -18,6 +19,8 @@ void RpcProvider::RegisterService(::google::protobuf::Service* service ) {
         const ::google::protobuf::MethodDescriptor* methoddsc = servicedsc->method(i) ; 
         std::string MethodName = methoddsc->name() ; 
         info.MethodMap[MethodName] = methoddsc ;
+
+
         LOG_INFO("  service's method: %s" , INFO , MethodName.c_str() ) ;  
     }
     
@@ -28,14 +31,26 @@ void RpcProvider::RegisterService(::google::protobuf::Service* service ) {
 // 启动muduo网络库的事件监听和日志系统
 void RpcProvider::Run() {
 
-    // 先初始化并开启日志系统
-    RpcServerLog::getInstance() ; 
-
-
-
     std::pair<std::string , int> rpcServerInfo = RpcApplication::GetInstance().GetRpcServerInfo() ; 
     std::string ip = rpcServerInfo.first ; 
     int port = rpcServerInfo.second ; 
+
+    // 向 zookeeper注册服务
+    ZkClient zkclient ; 
+    zkclient.Start() ; // 连接客户端
+    std::string data = ip + ":" + std::to_string(port) ; 
+
+    for(auto &sp : ServiceMap ) {
+        std::string servicename = sp.first ; 
+        std::string path = "/" ; 
+        path += servicename ; 
+        zkclient.Create(path.c_str() , nullptr , 0 ) ;  // 创建服务节点
+        for(auto &ssp : sp.second.MethodMap ) {
+            std::string methodname = ssp.first ; 
+            std::string methodpath = path + "/" + methodname ; 
+            zkclient.Create(methodpath.c_str() , data.c_str() , data.size()  , ZOO_EPHEMERAL ) ;  // 表示创建的是临时性节点。
+        }
+    }
 
     muduo::net::EventLoop loop ; 
     muduo::net::InetAddress addr(ip , port ) ; 

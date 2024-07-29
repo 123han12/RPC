@@ -202,30 +202,6 @@ rpcchannel.cpp.s:
 	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpcchannel.cpp.s
 .PHONY : rpcchannel.cpp.s
 
-rpcconfig.o: rpcconfig.cpp.o
-.PHONY : rpcconfig.o
-
-# target to build an object file
-rpcconfig.cpp.o:
-	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpcconfig.cpp.o
-.PHONY : rpcconfig.cpp.o
-
-rpcconfig.i: rpcconfig.cpp.i
-.PHONY : rpcconfig.i
-
-# target to preprocess a source file
-rpcconfig.cpp.i:
-	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpcconfig.cpp.i
-.PHONY : rpcconfig.cpp.i
-
-rpcconfig.s: rpcconfig.cpp.s
-.PHONY : rpcconfig.s
-
-# target to generate assembly for a file
-rpcconfig.cpp.s:
-	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpcconfig.cpp.s
-.PHONY : rpcconfig.cpp.s
-
 rpccontroller.o: rpccontroller.cc.o
 .PHONY : rpccontroller.o
 
@@ -298,6 +274,30 @@ rpcserverlog.cpp.s:
 	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpcserverlog.cpp.s
 .PHONY : rpcserverlog.cpp.s
 
+rpczookeeperutil.o: rpczookeeperutil.cpp.o
+.PHONY : rpczookeeperutil.o
+
+# target to build an object file
+rpczookeeperutil.cpp.o:
+	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpczookeeperutil.cpp.o
+.PHONY : rpczookeeperutil.cpp.o
+
+rpczookeeperutil.i: rpczookeeperutil.cpp.i
+.PHONY : rpczookeeperutil.i
+
+# target to preprocess a source file
+rpczookeeperutil.cpp.i:
+	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpczookeeperutil.cpp.i
+.PHONY : rpczookeeperutil.cpp.i
+
+rpczookeeperutil.s: rpczookeeperutil.cpp.s
+.PHONY : rpczookeeperutil.s
+
+# target to generate assembly for a file
+rpczookeeperutil.cpp.s:
+	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpczookeeperutil.cpp.s
+.PHONY : rpczookeeperutil.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -316,9 +316,6 @@ help:
 	@echo "... rpcchannel.o"
 	@echo "... rpcchannel.i"
 	@echo "... rpcchannel.s"
-	@echo "... rpcconfig.o"
-	@echo "... rpcconfig.i"
-	@echo "... rpcconfig.s"
 	@echo "... rpccontroller.o"
 	@echo "... rpccontroller.i"
 	@echo "... rpccontroller.s"
@@ -328,6 +325,9 @@ help:
 	@echo "... rpcserverlog.o"
 	@echo "... rpcserverlog.i"
 	@echo "... rpcserverlog.s"
+	@echo "... rpczookeeperutil.o"
+	@echo "... rpczookeeperutil.i"
+	@echo "... rpczookeeperutil.s"
 .PHONY : help
 
 
