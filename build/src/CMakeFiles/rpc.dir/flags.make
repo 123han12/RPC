@@ -6,5 +6,5 @@ CXX_DEFINES = -DDEBUG
 
 CXX_INCLUDES = -I/home/masplove/Project/RPC/include -I/home/masplove/Project/RPC/example -I/usr/local/lib
 
-CXX_FLAGS = -g
+CXX_FLAGS = 
 
