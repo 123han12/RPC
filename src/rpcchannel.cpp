@@ -1,6 +1,7 @@
 #include "rpcchannel.h"
 #include "protocol.pb.h"
 #include "rpczookeeperutil.h"
+#include "rpcredisutil.h"
 
 #include <sys/types.h>
 #include <sys/socket.h> 
@@ -45,6 +46,29 @@ void RpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method ,
     message.insert(0 , (const char*)&headersize , 4 ) ; 
 
 
+        // 通过静态查询的方式找到rpc服务的地址
+    // std::pair<std::string , int> rpcServerInfo = RpcConfig::GetInstance().GetRpcServerInfo() ; 
+    // std::string ip = rpcServerInfo.first ; 
+    // int port = rpcServerInfo.second ; 
+
+    // 通过zookeeper的方式找到rpc服务的地址
+    // std::string method_path = "/" + servicename + "/" + methodname ; 
+    // ZkClient zkclient ; 
+    // zkclient.Start() ; // 连接zookeeper服务器
+    // std::string ServiceAddress = zkclient.GetData(method_path.c_str() ) ; 
+    // int idx = ServiceAddress.find(":") ; 
+    // std::string ip = ServiceAddress.substr(0 , idx ) ;
+    // int port = std::atoi( ServiceAddress.substr(idx + 1 , ServiceAddress.size() - idx ).c_str() ) ;
+
+
+    // 通过redis的方式找到rpc服务的地址
+    Redis redis ; 
+    redis.Connect() ; 
+    std::string addr = redis.RedisCommand("hget" , servicename , methodname) ; 
+    int idx = addr.find(":") ; 
+    std::string ip = addr.substr(0 , idx ) ;
+    int port = std::atoi( addr.substr(idx + 1 , addr.size() - idx ).c_str() ) ;
+
 
     // 建立连接 发送已经序列化好的message 
     // 使用linux下的原生态接口进行编程
@@ -60,23 +84,7 @@ void RpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method ,
                 close(*sockptr) ; 
                 std::cout << "close socket file " << std::endl ; 
         }
-    ) ; 
-
-    // 通过静态查询的方式找到rpc服务的地址
-    // std::pair<std::string , int> rpcServerInfo = RpcConfig::GetInstance().GetRpcServerInfo() ; 
-    // std::string ip = rpcServerInfo.first ; 
-    // int port = rpcServerInfo.second ; 
-
-    // 通过zookeeper的方式找到rpc服务的地址
-    std::string method_path = "/" + servicename + "/" + methodname ; 
-    ZkClient zkclient ; 
-    zkclient.Start() ; // 连接zookeeper服务器
-    std::string ServiceAddress = zkclient.GetData(method_path.c_str() ) ; 
-    int idx = ServiceAddress.find(":") ; 
-    std::string ip = ServiceAddress.substr(0 , idx ) ;
-    int port = std::atoi( ServiceAddress.substr(idx + 1 , ServiceAddress.size() - idx ).c_str() ) ;   
-
-    
+    ) ;    
 
     //2.连接服务器
     struct sockaddr_in server_addr;

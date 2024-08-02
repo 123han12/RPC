@@ -226,6 +226,30 @@ rpccontroller.cc.s:
 	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpccontroller.cc.s
 .PHONY : rpccontroller.cc.s
 
+rpckeepalive.o: rpckeepalive.cpp.o
+.PHONY : rpckeepalive.o
+
+# target to build an object file
+rpckeepalive.cpp.o:
+	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpckeepalive.cpp.o
+.PHONY : rpckeepalive.cpp.o
+
+rpckeepalive.i: rpckeepalive.cpp.i
+.PHONY : rpckeepalive.i
+
+# target to preprocess a source file
+rpckeepalive.cpp.i:
+	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpckeepalive.cpp.i
+.PHONY : rpckeepalive.cpp.i
+
+rpckeepalive.s: rpckeepalive.cpp.s
+.PHONY : rpckeepalive.s
+
+# target to generate assembly for a file
+rpckeepalive.cpp.s:
+	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpckeepalive.cpp.s
+.PHONY : rpckeepalive.cpp.s
+
 rpcprovider.o: rpcprovider.cc.o
 .PHONY : rpcprovider.o
 
@@ -249,6 +273,30 @@ rpcprovider.s: rpcprovider.cc.s
 rpcprovider.cc.s:
 	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpcprovider.cc.s
 .PHONY : rpcprovider.cc.s
+
+rpcredisutil.o: rpcredisutil.cpp.o
+.PHONY : rpcredisutil.o
+
+# target to build an object file
+rpcredisutil.cpp.o:
+	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpcredisutil.cpp.o
+.PHONY : rpcredisutil.cpp.o
+
+rpcredisutil.i: rpcredisutil.cpp.i
+.PHONY : rpcredisutil.i
+
+# target to preprocess a source file
+rpcredisutil.cpp.i:
+	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpcredisutil.cpp.i
+.PHONY : rpcredisutil.cpp.i
+
+rpcredisutil.s: rpcredisutil.cpp.s
+.PHONY : rpcredisutil.s
+
+# target to generate assembly for a file
+rpcredisutil.cpp.s:
+	cd /home/masplove/Project/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/rpc.dir/build.make src/CMakeFiles/rpc.dir/rpcredisutil.cpp.s
+.PHONY : rpcredisutil.cpp.s
 
 rpcserverlog.o: rpcserverlog.cpp.o
 .PHONY : rpcserverlog.o
@@ -319,9 +367,15 @@ help:
 	@echo "... rpccontroller.o"
 	@echo "... rpccontroller.i"
 	@echo "... rpccontroller.s"
+	@echo "... rpckeepalive.o"
+	@echo "... rpckeepalive.i"
+	@echo "... rpckeepalive.s"
 	@echo "... rpcprovider.o"
 	@echo "... rpcprovider.i"
 	@echo "... rpcprovider.s"
+	@echo "... rpcredisutil.o"
+	@echo "... rpcredisutil.i"
+	@echo "... rpcredisutil.s"
 	@echo "... rpcserverlog.o"
 	@echo "... rpcserverlog.i"
 	@echo "... rpcserverlog.s"

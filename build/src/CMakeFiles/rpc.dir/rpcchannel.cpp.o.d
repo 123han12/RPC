@@ -315,5 +315,10 @@ src/CMakeFiles/rpc.dir/rpcchannel.cpp.o: \
  /usr/local/include/zookeeper/proto.h \
  /usr/local/include/zookeeper/zookeeper_version.h \
  /usr/local/include/zookeeper/recordio.h \
- /usr/local/include/zookeeper/zookeeper.jute.h /usr/include/arpa/inet.h \
+ /usr/local/include/zookeeper/zookeeper.jute.h \
+ /home/masplove/Project/RPC/include/rpcredisutil.h \
+ /usr/local/include/hiredis/hiredis.h /usr/local/include/hiredis/read.h \
+ /usr/local/include/hiredis/sds.h /usr/local/include/hiredis/alloc.h \
+ /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/arpa/inet.h \
  /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/bits/in.h

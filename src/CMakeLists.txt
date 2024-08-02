@@ -9,6 +9,7 @@ muduo_base
 pthread 
 muduo_net 
 zookeeper_mt
+hiredis 
 -Wl,--end-group
 )  
 # 这里将rpc框架生成一个动态库文件

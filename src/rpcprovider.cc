@@ -3,6 +3,9 @@
 #include "protocol.pb.h"
 #include "rpcserverlog.h"
 #include "rpczookeeperutil.h"
+#include "rpcredisutil.h" 
+#include "rpckeepalive.h"
+#include <vector>
 
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/stubs/callback.h>
@@ -20,7 +23,6 @@ void RpcProvider::RegisterService(::google::protobuf::Service* service ) {
         std::string MethodName = methoddsc->name() ; 
         info.MethodMap[MethodName] = methoddsc ;
 
-
         LOG_INFO("  service's method: %s" , INFO , MethodName.c_str() ) ;  
     }
     
@@ -36,21 +38,45 @@ void RpcProvider::Run() {
     int port = rpcServerInfo.second ; 
 
     // 向 zookeeper注册服务
-    ZkClient zkclient ; 
-    zkclient.Start() ; // 连接客户端
-    std::string data = ip + ":" + std::to_string(port) ; 
+    // ZkClient zkclient ; 
+    // zkclient.Start() ; // 连接客户端
+    // std::string data = ip + ":" + std::to_string(port) ; 
 
+    // for(auto &sp : ServiceMap ) {
+    //     std::string servicename = sp.first ; 
+    //     std::string path = "/" ; 
+    //     path += servicename ; 
+    //     zkclient.Create(path.c_str() , nullptr , 0 ) ;  // 创建服务节点
+    //     for(auto &ssp : sp.second.MethodMap ) {
+    //         std::string methodname = ssp.first ; 
+    //         std::string methodpath = path + "/" + methodname ; 
+    //         zkclient.Create(methodpath.c_str() , data.c_str() , data.size()  , ZOO_EPHEMERAL ) ;  // 表示创建的是临时性节点。
+    //     }
+    // }
+
+    // 向redis 注册服务
+    Redis redis ; 
+    // 连接 redis服务器
+    redis.Connect() ; 
+
+    // 注册服务地址
+    std::string address = ip + ":" + std::to_string(port) ; 
+    std::vector<std::string> service_container ; 
     for(auto &sp : ServiceMap ) {
         std::string servicename = sp.first ; 
-        std::string path = "/" ; 
-        path += servicename ; 
-        zkclient.Create(path.c_str() , nullptr , 0 ) ;  // 创建服务节点
+        service_container.push_back(servicename) ; 
         for(auto &ssp : sp.second.MethodMap ) {
             std::string methodname = ssp.first ; 
-            std::string methodpath = path + "/" + methodname ; 
-            zkclient.Create(methodpath.c_str() , data.c_str() , data.size()  , ZOO_EPHEMERAL ) ;  // 表示创建的是临时性节点。
+            redis.RegisterRpcAddress(servicename , methodname , address ) ; 
         }
     }
+
+    //开启心跳机制
+    std::string key = RpcApplication::GetInstance().GetKeepAliveKey() ; 
+    // 将当前rpc节点所注册的服务名字都 给到子进程
+    KeepAlive alive(key , service_container ) ;   
+    alive.start() ; 
+
 
     muduo::net::EventLoop loop ; 
     muduo::net::InetAddress addr(ip , port ) ; 

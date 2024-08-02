@@ -117,3 +117,29 @@ std::string RpcApplication::GetConfigPath() {
     return configMap[log] ; 
 
 }
+
+
+std::pair<std::string , int> RpcApplication::GetRedisInfo() {
+    std::string redisip = "redisip" ; 
+    std::string redisport = "redisport" ; 
+    if(configMap.find(redisip) == configMap.end() ) {
+        std::cout << __FILE__ << ": " << __LINE__  << "load redisip ip error" << std::endl ;
+        exit(EXIT_FAILURE) ; 
+    }
+    if(configMap.find(redisport) == configMap.end() ) {
+        std::cout << "load redisport port error" << std::endl ; 
+        exit(EXIT_FAILURE) ; 
+    }
+    std::string ip = configMap[redisip] ; 
+    int port = atoi(configMap[redisport].c_str() ) ; 
+    return make_pair(ip , port) ; 
+}
+
+
+std::string RpcApplication::GetKeepAliveKey() {
+    std::string key = "keepalivekey" ; 
+    if(configMap.find(key) == configMap.end() ) {
+        std::cout << "keepalivekey not found" << std::endl ; 
+    }
+    return configMap[key] ; 
+}
