@@ -21,7 +21,7 @@ void RpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method ,
     std::string message ; 
     if(!request->SerializeToString(&message) ) {
         std::cout << "serialize request failed!" << std::endl ; 
-        exit(EXIT_FAILURE) ; 
+        exit(EXIT_FAILURE) ;    
     } 
 
     RpcProtocol::RequestHeader header ; 
